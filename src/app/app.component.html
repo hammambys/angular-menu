@@ -1,0 +1,24 @@
+<mat-chip-list>
+  <ng-container *ngFor="let poste of postes; let i = index">
+    <mat-chip>
+      {{ poste.name }}
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+      >
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>delete</mat-icon>
+          <span>Supprimer</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>eject</mat-icon>
+          <span>Poste par défaut</span>
+        </button>
+      </mat-menu>
+    </mat-chip>
+  </ng-container>
+</mat-chip-list>
